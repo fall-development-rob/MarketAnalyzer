@@ -7,6 +7,10 @@ class Api():
         self.app = Flask(__name__)
 
     def run(self, debug=True):
+        """Register the Routes"""
+        routes = Routes(self.app)
+
+        routes.registerRoutes()
         
         """Run the Flask app."""
         self.app.run(debug=debug)
